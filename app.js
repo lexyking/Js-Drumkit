@@ -1,34 +1,16 @@
-const main = document.querySelector('main');
+document.addEventListener('keydown', e => {
+	// console.log(e.keyCode);
+	const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+	const key = document.querySelector(`.boxNote[data-key="${e.keyCode}"]`);
 
-console.log(main)
-// main.addEventListener('keydown', (e) => {
-// 	const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-// 	const key = document.querySelector(`.boxNote[data-key="${e.keyCode}"]`);
-// 	if (!audio) return;
+	if (!audio) return;
 
-// 	audio.currentTime = 0;
+	audio.currentTime = 0;
 
-// 	audio.play();
+	audio.play();
 
-// 	key.classList.add('playing');
-
-// 	console.log(e.keyCode)
-// })
-
-
-// document.addEventListener('keydown', e => {
-// 	// console.log(e.keyCode);
-// 	const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-// 	const key = document.querySelector(`.boxNote[data-key="${e.keyCode}"]`);
-
-// 	if (!audio) return;
-
-// 	audio.currentTime = 0;
-
-// 	audio.play();
-
-// 	key.classList.add('playing');
-// });
+	key.classList.add('playing');
+});
 
 function removeTransition(val) {
 	if (val.propertyName !== 'transform') return;
